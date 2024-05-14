@@ -1,79 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sen&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
+    font-family: 'Roboto', sans-serif;
+    color: #151515;
+    text-align: center;
+}
 
-    font-family: 'Source Sans Pro', sans-serif;
+body {
+    text-align: center;
+    padding: 2rem;
 }
 
 .movie-card {
-    display: flex;
-    background: linear-gradient(to right, rgba(22.75%, 23.53%, 28.24%, 1.00) 150px, rgba(22.75%, 23.53%, 28.24%, 0.84) 100%), url('../images/background.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*border: 1px solid red;*/
-    height: 50vh;
     margin-top: 5rem;
-    width: 100%;
-    justify-content: center;
-            align-items: center;
+    height: auto;
 }
 
-
-
-.movie-poster-container {
-    display: inline-block;
-    height: 85%;
-    width: 30%;
-    text-align: right;
+.movie-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    animation: slideFromTop 1s ease-in-out forwards;
 }
 
-.movie-poster {
-    height: 100%;
-    border-radius: 5px;
-
+@keyframes slideFromTop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
-.movie-info-container {
-
-   /* background-color: blue;*/
-    height: 100%;
-    width: 70%;
-   
+.movie-poster-container img {
+    margin-top: 1rem;
+    height: 500px;
+    border-radius: 10px;
+    animation: fade-in-left 1s ease forwards;
 }
 
-.movie-info-container {
-    padding-left: 2rem;
-    padding-top: 1rem;
-    color: #fff;
-}
-
-.movie-info-title {
-    margin-top: 3rem;
-    text-transform: capitalize;
-    font-weight: 900;
-    font-size: 2.5rem;
+@keyframes fade-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .movie-rating {
     display: inline-block;
-    border: 1px solid #fff;
-    padding: 0.5rem;
+    border: 1px solid #151515;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
+    margin-bottom: 1rem;
+    animation: fade-in-bottom 1s ease forwards;
+}
+
+@keyframes fade-in-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Adjust to translateY for bottom animation */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .movie-duration {
     margin-left: 1rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
 }
 
 .movie-duration:before {
-    content:"\2022 ";
+    content:"\2022";
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.movie-info-quote {
+    color: #151515a4;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.movie-info-overview-title {
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
 }
 
 .movie-info-actions {
@@ -86,14 +111,13 @@ html{
 
 .movie-info-actions ul li {
     display: inline-block;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     height: 50px;
     width: 50px;
     border-radius: 50%;
     background-color: rgb(3, 37, 65);
-    
 }
 
 .movie-info-actions ul li a {
@@ -106,31 +130,6 @@ html{
     justify-content: center;
 }
 
-.movie-info-quote {
-    color: rgba(255, 255, 255, 0.596);
-    font-style: italic;
-    font-size: 1.2rem;
-}
-
-.movie-info-overview-title {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.movie-info-people {
-    margin-top: 1.5rem;
-    list-style: none;
-}
-
-.movie-info-people li {
-    display: inline-block;
-    margin-right: 15rem;
-}
-
-.movie-info-people li p:first-child {
-    font-weight: 900;
-}
-
 footer {
     margin-top: 2rem;
     text-align: center;
@@ -139,6 +138,7 @@ footer {
 
 footer ul {
     list-style: none;
+    padding: 0;
 }
 
 footer ul li {
