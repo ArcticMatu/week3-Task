@@ -67,7 +67,7 @@ body {
 @keyframes fade-in-bottom {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Adjust to translateY for bottom animation */
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
